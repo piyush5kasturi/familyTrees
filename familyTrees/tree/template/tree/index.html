@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+
+  <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet"
+    type="text/css" />
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+  <meta charset=utf-8 />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
+  <script src="backend.js" charset="utf-8"></script>
+  <!--    <link rel="stylesheet" type="text/css" href="main.css">-->
+  <!--    <script src="mainS.js"></script>-->
+  <title>Hello, world!</title>
+  <style>
+    .ml15 {
+      font-weight: 800;
+      font-size: 3.0em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    h1 {
+  color: white;
+}
+
+    .ml15 .word {
+      display: inline-block;
+      line-height: 1em;
+    }
+
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 300px;
+      background-color: white;
+      padding: 10px;
+    }
+
+    .grid-container>div {
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 17px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--  STARTING NAV BAR-->
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <!--  <a class="navbar-brand" href="#"></a>-->
+    <!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+    <!--    <span class="navbar-toggler-icon"></span>-->
+    <!--  </button>-->
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <a class="btn btn-primary" href="form" role="button">ADD MEMEBER</a>
+<!--        <button type="button" class="btn btn-primary" id="addBtn">ADD MEMEBER</button>-->
+      </ul>
+
+        <h1 class="ml15">
+             <span class="word">FAMILY</span>
+             <span class="word">TREE</span>
+       </h1>
+
+      <form class="form-inline my-2 my-lg-0 ">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <!--  ENDING NAV BAR-->
+
+
+
+
+
+
+
+  <script>
+    console.log("vhjhfh");
+    anime.timeline({ loop: true })
+      .add({
+        targets: '.ml15 .word',
+        scale: [14, 1],
+        opacity: [0, 1],
+        easing: "easeOutCirc",
+        duration: 800,
+        delay: (el, i) => 800 * i
+      }).add({
+        targets: '.ml15',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: Infinity
+      })
+
+  </script>
+
+  <div class="container my-3">
+
+    <div class="card" style="width: 14rem;">
+            <img id="blah" src="https://us.123rf.com/450wm/apoev/apoev1903/apoev190300009/124806570-stock-vector-person-gray-photo-placeholder-man-in-t-shirt-on-gray-background.jpg?ver=6" src="readURL(this);" alt="your image" width="223" height="180" />
+              <input type='file' onchange="readURL(this);" />
+
+              <div class="card-body">
+                <!--        <h3><p>{{images.0.image_person_name}}</p></h3>-->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">NAME</span>
+                  </div>
+                  <input type="text" class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <center><input class="btn btn-primary" type="submit" value="Submit"> </center>
+              </div>
+            </div>
+
+    <div id="notes" class="row container-fluid"> </div>
+  </div>
+
+  <script>
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $('#blah')
+            .attr('src', e.target.result)
+            .width(223)
+            .height(180);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+
+
+
+
+
+
+
+  <!--  <br><center>  <button type="button"  id="hideshow" onclick="$('#target').show(); $('#hideshow').hide();" value="hide/show" class="btn btn-primary">ADD</button> </center>-->
+</body>
+
+</html>
