@@ -110,27 +110,36 @@
 
   </script>
 
-  <div class="container my-3">
-
-    <div class="card" style="width: 14rem;">
-            <img id="blah" src="https://us.123rf.com/450wm/apoev/apoev1903/apoev190300009/124806570-stock-vector-person-gray-photo-placeholder-man-in-t-shirt-on-gray-background.jpg?ver=6" src="readURL(this);" alt="your image" width="223" height="180" />
-              <input type='file' onchange="readURL(this);" />
-
-              <div class="card-body">
-                <!--        <h3><p>{{images.0.image_person_name}}</p></h3>-->
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">NAME</span>
-                  </div>
-                  <input type="text" class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                </div>
-                <center><input class="btn btn-primary" type="submit" value="Submit"> </center>
-              </div>
-            </div>
-
-    <div id="notes" class="row container-fluid"> </div>
+  <div class="row container-fluid my-3 mx-5">
+    <div class="card hidden my-2 mx-2" id="target" style="width: 14rem;">
+{% load static %}
+  <img id="blah1" name="image" src="/media/{{database.0.person_image}}" alt="your image" width="223" height="180" />
+    <div class="card-body">
+<h5 class="card-title">{{database.0.image_person_name}}</h5>
+<!--        <p class="card-text">{{database.0.student_class}}</p>-->
+        <input class="btn btn-primary" type="submit" value="update">
   </div>
+    </div>
 
+
+{%for i in database|slice:"1:"%}
+
+
+    <div class="card hidden my-2 mx-2" style="width: 14rem;">
+{% load static %}
+  <img  name="image" src="/media/{{i.person_image}}" alt="your image" width="223" height="180" />
+    <div class="card-body">
+<h5 class="card-title">{{i.image_person_name}}</h5>
+<!--        <p class="card-text">{{i.student_class}}</p>-->
+        <input class="btn btn-primary" type="submit" value="update">
+  </div>
+    </div>
+    {%if forloop.counter|divisibleby:3 and forloop.counter > 0%}
+    <br>
+    {%endif%}
+{% endfor %}
+
+</div>
   <script>
     function readURL(input) {
       if (input.files && input.files[0]) {
