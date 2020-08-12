@@ -44,12 +44,22 @@
                 </div>
     </div>
 
-    <select class="form-control">
-  <option>Default select</option>
-      <option>Default select</option>
-      <option>Default select</option>
-      <option>Default select</option>
-      <option>Default select</option>
+    <select class="form-control" name="select">
+  <option>SELECT YOUR RELATION </option>
+      <option>FATHER</option>
+      <option>MOTHER</option>
+      <option>COUSIN</option>
+      <option>SIBLING</option>
+</select>
+     <br>
+       <select class="form-control" name="selects">
+           {%for i in database%}
+  <option>{{i.image_person_name}} </option>
+<!--      <option>FATHER</option>-->
+<!--      <option>MOTHER</option>-->
+<!--      <option>COUSIN</option>-->
+<!--      <option>SIBLING</option>-->
+           {% endfor %}
 </select>
      <br>
      <br>
