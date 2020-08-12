@@ -115,7 +115,26 @@
 {% load static %}
   <img id="blah1" name="image" src="/media/{{database.0.person_image}}" alt="your image" width="223" height="180" />
     <div class="card-body">
-<h5 class="card-title">{{database.0.image_person_name}}</h5>
+<div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">NAME</span>
+                  </div>
+                  <input type="text" disabled value={{database.0.image_person_name}}  class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+<div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default-realtion">REALTION</span>
+                  </div>
+                  <input type="text" disabled value={{database.0.person_relation}}  class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+      <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-defaulT-realtion-with">REALTION WITH</span>
+                  </div>
+                  <input type="text" disabled value={{database.0.person_relation_with_name}}  class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+<!-- <h5 class="card-title">{{database.0.image_person_name}}</h5>-->
 <!--        <p class="card-text">{{database.0.student_class}}</p>-->
         <input class="btn btn-primary" type="submit" value="update">
   </div>
@@ -129,7 +148,33 @@
 {% load static %}
   <img  name="image" src="/media/{{i.person_image}}" alt="your image" width="223" height="180" />
     <div class="card-body">
-<h5 class="card-title">{{i.image_person_name}}</h5>
+      <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default-{{i}}">NAME</span>
+                  </div>
+                  <input type="text" disabled value={{i.image_person_name}}  class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+
+      <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default-realtion-{{i}}">REALTION</span>
+                  </div>
+                  <input type="text" disabled value={{i.person_relation}}  class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+      <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-defaulT-realtion-with-{{i}}">REALTION WITH</span>
+                  </div>
+                  <input type="text" disabled value={{i.person_relation_with_name}}  class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+
+
+
+
+
+<!--<h5 class="card-title">{{i.image_person_name}}</h5>-->
 <!--        <p class="card-text">{{i.student_class}}</p>-->
         <input class="btn btn-primary" type="submit" value="update">
   </div>
