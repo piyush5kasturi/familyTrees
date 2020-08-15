@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render , redirect
-from .models import images
+from .models import images , signup
 from .form import ImageForm
 from django.core.files.storage import FileSystemStorage
 
@@ -37,5 +37,20 @@ def form(request):
     # nslides=n//4+ceil((n/4)-(n//4))
     params = {'no_of_slides': n, 'range': range(1, n), 'database': data}
     return render(request , 'tree/form.html',params)
+
+def signup(request):
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        username = request.POST.get('Username')
+        user_email=request.POST.get('email')
+        user_pass=request.POST.get('password')
+        print(username,user_email,user_pass)
+        Databaseee = signup(user_username=username, user_email=user_email , user_password=user_pass)
+        Databaseee.save()
+        return redirect('/login')
+    return render(request,'tree/signup.html')
+
+def login(request):
+    return render(request,'tree/login.html')
 
 
