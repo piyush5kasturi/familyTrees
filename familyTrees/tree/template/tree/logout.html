@@ -12,14 +12,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
-<link href="C:\piyush\login\style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- //Custom Theme files -->
 <!-- web font -->
 <!-- <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet"> -->
 <!-- //web font -->
- <style>
-
-     /*--
+    <style>
+        /*--
 Author: Colorlib
 Author URL: https://colorlib.com
 License: Creative Commons Attribution 3.0 Unported
@@ -782,13 +781,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       padding: 1em 0 0;
     }
   }
- </style>
-
-
-
-
-
-
+    </style>
 </head>
 <body>
 	<!-- main -->
@@ -796,22 +789,28 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 		<h1>Welcome to Family Tree</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="signup" enctype="multipart/form-data" method="post">
+
+				<form action="" method="post">
 					{% csrf_token %}
-					<input class="text" type="text" name="user_username_person" placeholder="Username" required="">
-					<input class="text email" type="email" name="email" placeholder="Email" required="">
-					<input class="text" type="password" id="password" name="passwords" placeholder="Password" required="">
-					<input class="text w3lpass" type="password" id="confirm_password" name="password" placeholder="Confirm Password" required="">
-					<div class="wthree-text">
-						<label class="anim">
-							<input type="checkbox" class="checkbox" required="">
-							<span>I Agree To The Terms & Conditions</span>
-						</label>
-						<div class="clear"> </div>
-					</div>
-					<input type="submit" onclick="return Validate()" value="SIGNUP">
+					<br>
+<!--					<input class="text" type="text" name="Username" placeholder="Username" required=""><br>-->
+					<!-- <input class="text email" type="email" name="email" placeholder="Email" required=""> -->
+<!--					<input class="text" type="password" name="password" placeholder="Password" required=""> <br>-->
+					<!-- <input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required=""> -->
+						<p>
+							You are logout !!!
+						</p>
+
+<!--					<div class="wthree-text">-->
+<!--						<label class="anim">-->
+<!--							<input type="checkbox" class="checkbox" required="">-->
+<!--							<span>I Agree To The Terms & Conditions</span>-->
+<!--						</label>-->
+<!--						<div class="clear"> </div>-->
+<!--					</div>-->
+					<input type="submit" value="LOGIN AGAIN! ">
 				</form>
-				<p>Have an Account? <a href="login"> Login Now!</a></p>
+<!--				<p>Don't have an Account? <a href="signup"> Signup Now!</a></p>-->
 			</div>
 		</div>
 		<!-- copyright -->
@@ -833,16 +832,5 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 		</ul>
 	</div>
 	<!-- //main -->
-<script type="text/javascript">
-		function Validate() {
-			var password = document.getElementById("password").value;
-			var confirmPassword = document.getElementById("confirm_password").value;
-			if (password != confirmPassword) {
-				alert("Passwords do not match.");
-				return false;
-			}
-			return true;
-		}
-	</script>
 </body>
 </html>

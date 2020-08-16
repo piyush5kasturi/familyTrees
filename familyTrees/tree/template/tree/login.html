@@ -789,11 +789,21 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 		<h1>Welcome to Family Tree</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="#" method="post">
+			<p style="color:white">	{% if messages %}
+						{% for message in messages %}
+							{{ message }}
+						{% endfor %}
+					{% endif %}
+</p>
+				<form action="login" method="post">
+					{% csrf_token %}
+					<br>
 					<input class="text" type="text" name="Username" placeholder="Username" required=""><br>
 					<!-- <input class="text email" type="email" name="email" placeholder="Email" required=""> -->
-					<input class="text" type="password" name="password" placeholder="Password" required=""> -->
+					<input class="text" type="password" name="password" placeholder="Password" required=""> <br>
 					<!-- <input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required=""> -->
+
+
 					<div class="wthree-text">
 						<label class="anim">
 							<input type="checkbox" class="checkbox" required="">
@@ -801,7 +811,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 						</label>
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="SIGNUP">
+					<input type="submit" value="LOGIN">
 				</form>
 				<p>Don't have an Account? <a href="signup"> Signup Now!</a></p>
 			</div>
