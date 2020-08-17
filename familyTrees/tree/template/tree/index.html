@@ -113,37 +113,37 @@
   </script>
 <p>hello</p>
   <div class="row container-fluid my-3 mx-5">
-    <div class="card hidden my-2 mx-2" id="target" style="width: 14rem;">
-{% load static %}
-  <img id="blah1" name="image" src="/media/{{database.0.person_image}}" alt="your image" width="223" height="180" />
-    <div class="card-body">
-<div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">NAME</span>
-                  </div>
-                  <input type="text" disabled value={{database.0.image_person_name}}  class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                </div>
+<!--    <div class="card hidden my-2 mx-2" id="target" style="width: 14rem;">-->
+<!--{% load static %}-->
+<!--  <img id="blah1" name="image" src="/media/{{database.0.person_image}}" alt="your image" width="223" height="180" />-->
+<!--    <div class="card-body">-->
+<!--<div class="input-group mb-3">-->
+<!--                  <div class="input-group-prepend">-->
+<!--                    <span class="input-group-text" id="inputGroup-sizing-default">NAME</span>-->
+<!--                  </div>-->
+<!--                  <input type="text" disabled value={{database.0.image_person_name}}  class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">-->
+<!--                </div>-->
 
-<div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default-realtion">REALTION</span>
-                  </div>
-                  <input type="text" disabled value={{database.0.person_relation}}  class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                </div>
-      <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-defaulT-realtion-with">REALTION WITH</span>
-                  </div>
-                  <input type="text" disabled value={{database.0.person_relation_with_name}}  class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                </div>
-<!-- <h5 class="card-title">{{database.0.image_person_name}}</h5>-->
-<!--        <p class="card-text">{{database.0.student_class}}</p>-->
-        <input class="btn btn-primary" type="submit" value="update">
-  </div>
-    </div>
+<!--<div class="input-group mb-3">-->
+<!--                  <div class="input-group-prepend">-->
+<!--                    <span class="input-group-text" id="inputGroup-sizing-default-realtion">REALTION</span>-->
+<!--                  </div>-->
+<!--                  <input type="text" disabled value={{database.0.person_relation}}  class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">-->
+<!--                </div>-->
+<!--      <div class="input-group mb-3">-->
+<!--                  <div class="input-group-prepend">-->
+<!--                    <span class="input-group-text" id="inputGroup-sizing-defaulT-realtion-with">REALTION WITH</span>-->
+<!--                  </div>-->
+<!--                  <input type="text" disabled value={{database.0.person_relation_with_name}}  class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">-->
+<!--                </div>-->
+<!--&lt;!&ndash; <h5 class="card-title">{{database.0.image_person_name}}</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;        <p class="card-text">{{database.0.student_class}}</p>&ndash;&gt;-->
+<!--        <input class="btn btn-primary" type="submit" value="update">-->
+<!--  </div>-->
+<!--    </div>-->
 
 
-{%for i in database|slice:"1:"%}
+{%for i in database|slice:"0:"%}
 
 
     <div class="card hidden my-2 mx-2" style="width: 14rem;">

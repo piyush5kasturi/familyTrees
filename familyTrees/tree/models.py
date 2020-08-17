@@ -14,7 +14,7 @@ class images(models.Model):
     image_person_name=models.TextField()
     person_image=models.ImageField(upload_to="tree\images", default="")
     person_relation=models.CharField(max_length=20)
-    person_relation_with_name = models.CharField(max_length=20, default="")
+    person_relation_with_name = models.CharField(max_length=20, default="" ,blank=True,null=True)
     login_username=models.CharField(max_length=50,default="")
 
     def __str__(self):

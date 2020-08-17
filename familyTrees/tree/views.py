@@ -13,7 +13,7 @@ import time
 
 def index(request):
     if request.session.has_key('username'):
-        data = images.objects.all()
+        data = images.objects.filter(login_username=request.session['username'])
         print(data)
         n = len(data)
         # nslides=n//4+ceil((n/4)-(n//4))
@@ -29,6 +29,7 @@ def form(request):
         image_person_name = request.POST.get('image_person_name')
         person_relation=request.POST.get('select')
         person_relation_with_name = request.POST.get('selects')
+        login_username=request.session['username']
         # student_class = request.POST.get('student_class')
         print('person_image', image_person_name)
         person_image = request.FILES['person_image']
@@ -36,10 +37,10 @@ def form(request):
         print(person_image, image_person_name)
         image_person_name = request.POST.get('image_person_name')
         # student_class = request.POST.get('student_class')
-        Databaseee = images(image_person_name=image_person_name, person_image=person_image , person_relation=person_relation, person_relation_with_name=person_relation_with_name)
+        Databaseee = images(image_person_name=image_person_name, person_image=person_image , person_relation=person_relation, person_relation_with_name=person_relation_with_name,login_username=login_username)
         Databaseee.save()
         return redirect('index')
-    data = images.objects.all()
+    data = images.objects.filter(login_username=request.session['username'])
     print(data)
     n = len(data)
     # nslides=n//4+ceil((n/4)-(n//4))
