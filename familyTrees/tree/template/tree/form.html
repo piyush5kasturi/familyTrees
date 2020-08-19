@@ -74,7 +74,7 @@
     </div>
 
     <select class="form-control" name="select">
-  <option>SELECT YOUR RELATION </option>
+  <option>NONE </option>
       <option>FATHER</option>
       <option>MOTHER</option>
       <option>COUSIN</option>
@@ -82,6 +82,7 @@
 </select>
      <br>
        <select class="form-control" name="selects">
+           <option>NONE </option>
            {%for i in database%}
   <option>{{i.image_person_name}} </option>
 <!--      <option>FATHER</option>-->

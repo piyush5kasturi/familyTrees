@@ -40,6 +40,8 @@ def form(request):
         Databaseee = images(image_person_name=image_person_name, person_image=person_image , person_relation=person_relation, person_relation_with_name=person_relation_with_name,login_username=login_username)
         Databaseee.save()
         return redirect('index')
+    else:
+        return HttpResponse('404 not found')
     data = images.objects.filter(login_username=request.session['username'])
     print(data)
     n = len(data)
