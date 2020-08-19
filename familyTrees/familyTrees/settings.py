@@ -70,6 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'familyTrees.wsgi.application'
 
+SESSION_EXPIRE_AT_BROWSER_CLOSE=True
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
